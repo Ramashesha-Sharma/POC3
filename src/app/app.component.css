@@ -1,0 +1,18 @@
+nav ul li{
+    display: inline-block;
+   
+    margin: 20px;
+}
+
+nav{
+    background-color: salmon;
+    text-align: center;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+}
+nav ul li:hover{
+    background-color: aqua;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+</head>
+<body>
+<table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th (click)="toggleSort('id')">Id</th>
+            <th (click)="toggleSort('fname')">Fname</th>
+            <th (click)="toggleSort('surname')">Lname</th>
+            <th (click)="toggleSort('dob')">Dob</th>
+            <th (click)="toggleSort('joiningDate')">Doj</th>
+            <th (click)="toggleSort('mobileNo')">mob</th>
+            <th (click)="toggleSort('pincode')">pincode</th>
+            
+            <th style="text-align: center;" colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users | orderBy:orderProperty:val">
+            <td>{{user.id}}</td>
+            <td>{{user.fname}}</td>
+            <td>{{user.surname}}</td>
+            <td>{{user.dob}}</td>
+            <td>{{user.joiningDate}}</td>
+            <td>{{user.mobileNo}}</td>
+            <td>{{user.pincode}}</td>
+            
+            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delteUser(user.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            <td class="text-center"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span><a [routerLink]="['/update',user.id]" style="color: white;"> Update</a></button></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
